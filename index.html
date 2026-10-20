@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Itz_fahd_YT | Ultimate Bloxd Code Hub</title>
+<meta name="theme-color" content="#080a12"><meta name="description" content="Itz_fahd_YT Bloxd.io Code Hub — codes, schematics, and creator tools.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero"><nav>
+<div class="logo"><img class="channel-avatar" src="channel-avatar.png" alt="Itz_fahd_YT channel logo"> <span class="brand-name">Itz_fahd_YT</span></div>
+<div class="nav-actions"><a class="youtube" href="https://www.youtube.com/@Itz_fahd_YT_gaming" target="_blank">▶ YouTube</a><button id="ownerBtn" class="owner-btn">＋ OWNER</button></div>
+</nav><div class="hero-content"><div class="badge">🔥 OFFICIAL CODE HUB</div><h1>BLOXD <span>CODE HUB</span></h1><p>Codes • Schematics • Creator Tools</p><a href="#codes" class="main-btn">🚀 EXPLORE CODES</a></div></header>
+<main>
+<section class="notice"><h2>👑 Welcome to the Ultimate Hub</h2><p>Built for the <b>Itz_fahd_YT</b> community. Store your codes and schematic files in one place.</p></section>
+<section id="codes"><div class="section-title"><h2>💻 CODE LIBRARY</h2><p>Copy codes, manage your library, and customize each code card.</p></div>
+<div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="cinematic">🎬 Cinematic</button><button class="filter" data-filter="chat">💬 Chat</button><button class="filter" data-filter="character">👤 Character</button><button class="filter" data-filter="commands">⚡ Commands</button></div>
+<div id="codeGrid" class="grid">
+
+<article class="card" data-default-id="cinematic-intro" data-category="cinematic"><div class="card-icon">🎬</div><h3>Cinematic Intro</h3><p>A dramatic server introduction with scenes and countdowns.</p><pre><code>// Cinematic intro
+let timeRemaining = 40 * 20;
+let currentScene = -1;</code></pre><div class="card-actions"><button class="copy-btn">📋 Copy Code</button><button class="delete-btn owner-only">🗑️ Delete</button></div><label class="bg-btn owner-only">🖼️ Code Background<input class="bg-input" type="file" accept="image/*"></label></article>
+<article class="card" data-default-id="super-youtuber-chat" data-category="chat"><div class="card-icon">💬</div><h3>Super YouTuber Chat</h3><p>Styled chat tags for your players.</p><pre><code>api.broadcastMessage([
+  { str: "[⚡ Super] ", style: { color: "#FFD700" } },
+  { str: "[▶ YouTuber] ", style: { color: "#FF0000" } },
+  { str: playerName + ": " + msg }
+]);</code></pre><div class="card-actions"><button class="copy-btn">📋 Copy Code</button><button class="delete-btn owner-only">🗑️ Delete</button></div><label class="bg-btn owner-only">🖼️ Code Background<input class="bg-input" type="file" accept="image/*"></label></article>
+<article class="card" data-default-id="green-planks-character" data-category="character"><div class="card-icon">🟩</div><h3>Green Planks Character</h3><p>Turn character parts into Green Planks blocks.</p><pre><code>api.updateEntityNodeMeshAttachment(
+  myId, "HeadMesh", "BloxdBlock",
+  { blockName: "Green Planks", size: 0.5 },
+  [0, 0, 0], [0, 0, 0]
+);</code></pre><div class="card-actions"><button class="copy-btn">📋 Copy Code</button><button class="delete-btn owner-only">🗑️ Delete</button></div><label class="bg-btn owner-only">🖼️ Code Background<input class="bg-input" type="file" accept="image/*"></label></article>
+<article class="card" data-default-id="admin-commands" data-category="commands"><div class="card-icon">⚡</div><h3>Admin Commands</h3><p>Add custom commands such as heal and announcements.</p><pre><code>function onPlayerChat(myId, msg) {
+  if (msg === "!hello") {
+    api.sendMessage(myId, "Hello!");
+    return false;
+  }
+}</code></pre><div class="card-actions"><button class="copy-btn">📋 Copy Code</button><button class="delete-btn owner-only">🗑️ Delete</button></div><label class="bg-btn owner-only">🖼️ Code Background<input class="bg-input" type="file" accept="image/*"></label></article>
+
+</div></section>
+<section id="shismatics" class="panel"><div class="section-title"><h2>📦 SCHEMATIC & FILE VAULT</h2><p>Upload schematic and project files. Files are saved in this browser and remain after refresh.</p></div>
+<div id="dropZone" class="drop-zone"><div>📁</div><b>Drop files here</b><span>or choose files from your device</span><label class="main-btn file-pick">＋ ADD FILES<input id="fileInput" type="file" multiple></label></div><div id="fileList" class="file-list"></div></section>
+<section class="youtube-section"><div><h2>🔴 Itz_fahd_YT</h2><p>Subscribe for more Bloxd.io codes, builds, and gaming content!</p></div><a class="subscribe-btn" href="https://www.youtube.com/@Itz_fahd_YT_gaming" target="_blank">▶ OPEN YOUTUBE</a></section>
+</main>
+<div id="ownerModal" class="modal hidden"><div class="modal-card"><button class="close" id="closeModal">×</button><h2>👑 OWNER PANEL</h2><p>Owner access — sign in to manage codes and files.</p><input id="ownerPassword" type="password" placeholder="Owner code"><button id="loginOwner" class="main-btn">UNLOCK</button>
+<p id="loginMsg"></p>
+<div id="ownerTools" class="owner-tools" hidden>
+  <h3>➕ ADD CODE</h3>
+  <input id="newCodeTitle" type="text" maxlength="60" placeholder="Code name">
+  <select id="newCodeCategory">
+    <option value="cinematic">🎬 Cinematic</option>
+    <option value="chat">💬 Chat</option>
+    <option value="character">👤 Character</option>
+    <option value="commands">⚡ Commands</option>
+  </select>
+  <textarea id="newCodeText" rows="9" placeholder="Paste code here"></textarea>
+  <button id="addCodeBtn" class="main-btn" type="button">＋ ADD CODE</button>
+  <p id="addCodeMsg"></p>
+</div></div></div>
+<footer>⚡ Itz_fahd_YT CODE HUB © 2026</footer><script src="script.js"></script>
+</body></html>
